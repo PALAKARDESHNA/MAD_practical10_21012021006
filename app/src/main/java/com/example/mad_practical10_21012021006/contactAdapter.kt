@@ -7,12 +7,13 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 
-class contactAdapter( context: Context, val array:ArrayList<contect>):ArrayAdapter<contect>(context,0,array){
+class contactAdapter( context: Context, val array:ArrayList<Contact>):ArrayAdapter<Contact>(context,0,array){
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.listviewlayout,parent,false)
-        view.findViewById<TextView>(R.id.textView2).text = array.get(position).name
-        view.findViewById<TextView>(R.id.textView3).text = array.get(position).address
+        view.findViewById<TextView>(R.id.textView).text = array.get(position).name
+        view.findViewById<TextView>(R.id.textView2).text = array.get(position).address
         view.findViewById<TextView>(R.id.textView4).text = array.get(position).emailid
+        view.findViewById<TextView>(R.id.textView3).text = array.get(position).phoneno
 
         return view
     }

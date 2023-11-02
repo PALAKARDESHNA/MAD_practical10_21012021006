@@ -23,18 +23,18 @@ class MainActivity : AppCompatActivity() {
 
         floatingBt.setOnClickListener {
             SendDatatoListview()
-            Intent(this,MapsActivity::class.java).apply { startActivity(this) }
+            //Intent(this,MapsActivity::class.java).apply { startActivity(this) }
         }
 
 
     }
     private fun getPersonDetailsFromJson(sJson: String?) {
-        val personList = ArrayList<contect>()
+        val personList = ArrayList<Contact>()
         try {
             val jsonArray = JSONArray(sJson)
             for (i in 0 until jsonArray.length()) {
                 val jsonObject = jsonArray[i] as JSONObject
-                val person = contect(jsonObject)
+                val person = Contact(jsonObject)
                 personList.add(person)
             }
             val personListview = findViewById<ListView>(R.id.Listview1)
